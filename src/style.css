@@ -1,0 +1,235 @@
+@import url('https://js.arcgis.com/4.24/esri/css/main.css');
+
+button {
+    touch-action: manipulation;
+}
+
+html,
+body,
+#viewDiv,
+#map-container {
+    flex: 1 1 auto;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+#box {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+}
+
+#panel {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    flex: 0 1 auto;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    z-index: 1;
+}
+
+#panel>div {
+    margin-bottom: 10px;
+}
+
+#panel i.bi {
+    margin-right: 5px;
+}
+
+#activities {
+    background-color: white;
+    border-radius: 3px;
+}
+
+#activities button.settings {
+    border-width: 0px;
+    background-color: white;
+}
+
+#activities button.settings:hover {
+    background-color: #ddd;
+    border-radius: 8px;
+}
+
+#activities td .settings-list {
+    display: none;
+    position: absolute;
+    right: 0px;
+    width: 100px;
+    margin-bottom: 36px;
+    border-style: solid;
+    padding-bottom: 10px;
+    background-color: white;
+    border-width: 1px;
+    padding: 5px 0px 5px 0px;
+}
+
+#activities td .settings-list button {
+    border-width: 0px;
+    background-color: white;
+    width: 100%;
+    text-align: left;
+    padding-left: 10px;
+    font-size: 13px;
+}
+
+#activities td .settings-list button:hover {
+    background-color: #ddd;
+}
+
+#activities td {
+    padding: 3px;
+}
+
+#gpxFile {
+    display: none;
+}
+
+#activities>div {
+    margin-bottom: 10px;
+}
+
+#activities table th {
+    padding-top: 0px;
+}
+
+#activities td.icon span {
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+    border-radius: 25px;
+    margin-top: 5px;
+}
+
+#activities tr td:first-child {
+    width: 20px;
+}
+
+#activities input {
+    height: 23px;
+    width: 17px;
+    margin-top: 3px;
+    cursor: pointer;
+}
+
+#playback-controls {
+    min-width: 375px;
+}
+
+#playback-controls button.auto-center.active {
+    color: orange;
+}
+
+#panel #speed-controls {
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+
+#speed-controls .x {
+    margin-left: 7px;
+}
+
+#multiplier {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+#time {
+    display: inline-block;
+    float: right;
+    background-color: #000;
+    font-family: REVERT;
+    font-family: monospace;
+    min-width: 70px;
+    padding-left: 7px;
+    padding-right: 7px;
+    font-size: 1.5em;
+    color: yellow;
+    max-width: 135px;
+    margin-left: 15px;
+    line-height: 31px;
+}
+
+#controls button {
+    cursor: pointer;
+}
+
+#panel > #date-time-and-location {
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+#date-time-and-location #lat-long-label, #date-time-and-location #current-time-label { 
+    margin-right: 5px;
+}
+
+#date-time-and-location #current-time-label {
+    margin-left: 15px;
+}
+
+@media screen and (max-width: 70em) {
+
+    #panel {
+        position: static;
+        padding: 0px 10px 0px 10px;
+        border-radius: 0;
+        width: 100%;
+    }
+
+    #panel #activities table {
+        margin-bottom: 5px;
+    }
+
+    #panel #activities table th,
+    #panel #activities table td {
+        padding: 0px;
+    }
+
+    #activities td.icon span {
+        height: 15px;
+        width: 15px;
+    }
+
+    #activities-controls {
+        display: none;
+    }
+
+    #playback-controls button {
+        min-width: 4.5em;
+    }
+
+    #panel #playback-controls i.bi {
+        margin: 0px;
+    }
+
+    #speed-controls i.bi.x {
+        display: inline-block;
+        padding-top: 3px;
+        vertical-align: top;
+    }
+
+    button span.text {
+        display: none;
+    }
+
+    button span.text.clear {
+        display: inline-block;
+    }
+
+    #time {
+        height: 37px;
+        padding: 2px 5px 2px 5px;
+        line-height: 34px;
+    }
+
+    #panel > #date-time-and-location {
+        display: none;
+    }
+    
+}
