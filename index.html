@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reveja e compare suas corridas</title>
+  <script type="module" crossorigin src="/assets/index.7eb0daf2.js"></script>
+  <link rel="stylesheet" href="/assets/index.d3b4073e.css">
+</head>
+
+<body>
+    <div id="box">
+        <div id="modal" class="modal" style="display: none">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Comparador de corridas</h5>
+                    </div>
+                    <div class="modal-body">
+                        Envie um arquivo GPX'.
+                        Reveja e compare sua corrida com as anteriores.
+                    </div>
+                    <div class="modal-footer">
+                        <button id="close-modal" type="button" class="btn btn-secondary">Fechar</button>
+                        <button id="upload-gpx-from-modal" type="button" class="btn btn-primary">Envie um arquivo GPX...</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="modal-backdrop" class="modal-backdrop fade" style="display: none;"></div>
+
+        <div id="panel" style="display: none;">
+
+            <div id="activities"></div>
+
+            <div id="activities-controls">
+                <button id="clear" class="btn btn-sm btn-primary" disabled style="display: none">
+                    <i class="bi bi-x-circle-fill"></i><span class="clear text">Clear</span><span class="text">
+                        Activities</span>
+                </button>
+                <button id="upload" class="btn btn-sm btn-primary">
+                    <i class="bi bi-upload"></i><span class="upload text">Upload GPX</span>
+                </button>
+                <input id="gpxFile" type="file" multiple="multiple" />
+                <button id="reset" class="btn btn-sm btn-primary" disabled style="display: none">
+                    <i class="bi bi-arrow-repeat"></i><span class="text">Restart</span>
+                </button>
+                <button id="back" class="btn btn-sm btn-primary" disabled style="display: none">
+                    <i class="bi bi-skip-backward-fill"></i><span class="text">Backward</span>
+                </button>
+                <button id="start" class="btn btn-sm btn-primary" disabled>
+                    <i class="bi bi-play-fill"></i><span class="text">Start</span>
+                </button>
+                <button id="pause" class="btn btn-sm btn-primary" style="display: none">
+                    <i class="bi bi-pause-fill"></i><span class="text">Pause</span>
+                </button>
+                <button id="forward" class="btn btn-sm btn-primary" disabled style="display: none">
+                    <i class="bi bi-skip-forward-fill"></i><span class="text">Forward</span>
+                </button>
+                <button id="center" class="btn btn-sm btn-primary active auto-center" disabled style="display: none">
+                    <i class="bi bi-record2-fill"></i><span class="text">Auto-center</span>
+                </button>
+                <span id="time"></span>
+            </div>
+
+            <div id="speed-controls"  style="display: none">
+                <span>Speed: </span>
+                <button id="slower" class="btn btn-sm btn-primary" disabled>
+                    <i class="bi bi-arrow-left"></i><span class="text">Slower</span>
+                </button>
+                <i class="x bi bi-x-lg"></i><span id="multiplier"></span>
+                <button id="faster" class="btn btn-sm btn-primary" disabled>
+                    <i class="bi bi-arrow-right"></i><span class="text">Faster</span>
+                </button>
+            </div>
+            
+            <div id="date-time-and-location" style="display: none">
+                <span id="lat-long-label">Lat/Long:</span>
+                <span id="lat-long-text"></span>
+                <span id="current-time-label">Local Time:</span>
+                <span id="current-time-text"></span>
+            </div>
+
+            <canvas id="chart" width="400" height="300"> </canvas> 
+
+        </div>
+
+        <div id="map-container">
+            <div id="viewDiv"></div>
+        </div>
+
+    </div>
+    
+</body>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4TW4D8Z0XG"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-4TW4D8Z0XG');
+</script>
+
+</html>
